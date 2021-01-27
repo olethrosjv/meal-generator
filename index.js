@@ -1,6 +1,8 @@
 /* we need the button and that container div */
 
-const get_meal_btn = document.getElementById("get_meal"); // we're making a GET request to that endpoint, it sends back a JSON response, which we can parse in order to retrieve the data we want.
+const get_meal_btn = document.getElementById(
+  "get_meal"
+); /* we're making a GET request to that endpoint, it sends back a JSON response, which we can parse in order to retrieve the data we want.*/
 const meal_container = document.getElementById("meal");
 
 get_meal_btn.addEventListener("click", () => {
@@ -43,7 +45,7 @@ const createMeal = (meal) => {
 
 				${
           meal.strCategory
-            ? `<p><strong>Category:</strong> ${meal.strCategory}</p>`
+            ? `<p><strong>Category:</strong> ${meal.strCategory}<p/>`
             : ""
         }
 				${meal.strArea ? `<p><strong>Area:</strong> ${meal.strArea}</p>` : ""}
@@ -62,14 +64,14 @@ const createMeal = (meal) => {
 			<div class="columns seven">
 				                <h3>Instructions</h3>
 
-				<p>${meal.strInstructions}</p>
+				<p>${meal.strInstructions}<p/>
 			</div>
 		</div>
 		${
       meal.strYoutube
         ? `
 		<div class="row">
-			<h4>Video Recipe</h4>
+			<h3>Video Recipe</h3>
 			<div class="videoWrapper">
 				<iframe width="420" height="315"
 				src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
